@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Struk Pembayaran</title>
+    <style>
+        body {
+            background-color: #FFFBF9;
+         
+        }
+
+        .struk {
+            max-width: 500px;
+            margin: auto;
+            border: 2px dashed rgb(234, 184, 0);
+            padding: 20px;
+            background: white;
+        }
+
+        h2 {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-align: center;
+            color: #f06292;
+        }
+
+        p {
+            font-size: 16px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 8px 15px;
+        }
+
+         table{
+            border-collapse: separate;
+            border-radius: 12px;
+             
+            
+        }
+
+        table {
+  box-shadow: 0 4px 5px rgba(134, 16, 118, 0.259);
+}
+
+        td{
+border-collapse: separate;
+    border-radius: 8px
+        }
+    </style>
+</head>
+
+<body vlink="yellow"  link="white">
+
+     <table align="center" style="width:100%; max-width:1100px;">
+
+          <tr>
+            <td align="right" bgcolor="#5189EA" style="padding: 15px;">
+                <!--menu-->
+                <a href="Tugas2-1.html">HOME</a> |
+                <a href="Gallery.html">GALLERY</a> |
+                <a href="contact_us.html">Contact Us </a> |
+                <a href="about_us.html">About Us</a>  |
+                <!--menu-->
+                <a href="keranjang.html">🧺</a>
+            </td>
+        </tr>
+</table>
+<br>
+<div class="struk">
+    <h2>STRUK PEMBAYARAN</h2>
+
+    <script>
+        var waktu = new Date();
+        var namaHari = new Array ("Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu");
+        var hari = waktu.getDay();
+
+        //document.write(namaHari[1]);
+        //document.write(hari) <-- yang terpanggil nilai index nya, cara untuk memanggil nama hari yaitu sintax dibawah dan di atas juga bisa
+        document.write("Hari: "+namaHari[hari]);
+
+        document.write("<br>");
+
+        var namaBulan = new Array ("Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember")
+        var bulan = waktu.getMonth();
+
+        document.write("Bulan: "+namaBulan[bulan]);
+
+        document.write("<br>");
+
+        var tanggal = waktu.getDate()
+        var tahun = waktu.getFullYear();
+
+        document.write("Tanggal: "+tanggal);
+
+        document.write("<br>");
+
+        document.write("Tahun: "+tahun);
+
+    </script>
+
+    <p><b>Nama:</b> <span id="nama"></span></p>
+    <p><b>Email:</b> <span id="email"></span></p>
+    <p><b>Alamat:</b> <span id="alamat"></span></p>
+    <p><b>Kota:</b> <span id="kota"></span></p>
+    <p><b>Metode Pembayaran:</b> <span id="payment"></span></p>
+    <p><b>Pesan:</b> <span id="pesan"></span></p>
+
+    <hr>
+    <p><b>Status:</b> Pesanan berhasil dibuat ✔</p>
+
+    <button onclick="window.print()">Cetak Struk</button>
+</div>
+
+<script>
+    const data = new URLSearchParams(window.location.search);
+
+    document.getElementById("nama").textContent = data.get("nama");
+    document.getElementById("email").textContent = data.get("email");
+    document.getElementById("alamat").textContent = data.get("alamat");
+    document.getElementById("kota").textContent = data.get("kota");
+    document.getElementById("payment").textContent = data.get("payment");
+    document.getElementById("pesan").textContent = data.get("pesan");
+</script>
+
+
+
+</body>
+</html>
